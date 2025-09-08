@@ -4,6 +4,8 @@ import MatchedSkill from '../../component/MatchedSkill';
 import ScoreCard from '../../component/ScoreCard';
 import Remarks from '../../component/Remarks';
 import MachedOpening from '../../component/MachedOpening';
+import WorkingExperience from '../../component/WorkingExperience';
+import RadarChart from '../../component/RadarChart';
 
 interface Score{
   name:string;
@@ -18,20 +20,22 @@ const scores:Score[] = [
 
 export default function CvPage(){
 
-  const bestMatch = scores.reduce((prev, current) => (prev.score > current.score) ? prev : current);
   return(
     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', p: 2,gap:2,flexDirection:'row' }}>
-      {/* skills matched */}
-      <MatchedSkill />
+      {/* <MatchedSkill /> */}
 
+      {/* <ScoreCard /> */}
 
-      {/* score card */}
-      <ScoreCard />
-
-      {/* remarks */}
-      <Remarks />
+      {/* <Remarks /> */}
 
       <MachedOpening />
+
+      <WorkingExperience 
+        relevantYears={2.8}
+        totalYears={3.4}
+        requestYears={5}
+      />
+      <RadarChart/>
     </Box>
   );
 };
